@@ -11,7 +11,8 @@ public class Sort {
         MakeArray.outSequence(nums);
         System.out.println(Arrays.toString(nums));
 
-        QuickSort.quickSort(nums);
+        BubbleSort.bubbleSort(nums);
         System.out.println(Arrays.toString(nums));
+
     }
 }
