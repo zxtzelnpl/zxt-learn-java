@@ -31,6 +31,10 @@ public class MakeArray {
         }
     }
 
+    /**
+     * 对给定的数组进行翻转
+     * @param arr 给定的数组
+     */
     public static void reverse(int[] arr){
         int len = arr.length;
         for(int i =0;i<arr.length/2;i++){
@@ -38,6 +42,12 @@ public class MakeArray {
         }
     }
 
+    /**
+     * 对给定的数组进行翻转
+     * @param arr 给定的数组
+     * @param x 第一个位置
+     * @param y 第二个位置
+     */
     private static void swap(int[] arr, int x, int y) {
         arr[x] ^= arr[y];
         arr[y] ^= arr[x];
