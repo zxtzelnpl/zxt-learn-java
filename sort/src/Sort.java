@@ -5,14 +5,15 @@ import method.*;
 public class Sort {
     public static void main(String [] args){
         System.out.println("The sort main begins:");
-        int [] nums = MakeArray.createArray(1000);
-        System.out.println(Arrays.toString(nums));
+        int [] numArr = MakeArray.createArray(100);
 
-        MakeArray.outSequence(nums);
-        System.out.println(Arrays.toString(nums));
+        MakeArray.outSequence(numArr);
+        System.out.println(Arrays.toString(numArr));
 
-        BubbleSort.bubbleSort(nums);
-        System.out.println(Arrays.toString(nums));
+        int[] numArr1 = QuickSort.quickSort(numArr);
+        System.out.println(Arrays.toString(numArr1));
 
+        int[] numArr2 = BubbleSort.bubbleSort(numArr);
+        System.out.println(Arrays.toString(numArr2));
     }
 }

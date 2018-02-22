@@ -18,17 +18,29 @@ public class MakeArray {
 
     /**
      * 对给定的数组进行乱序排列
-     * @param nums 给定的数组
+     * @param arr 给定的数组
      */
-    public static void  outSequence(int[] nums){
-        int len = nums.length;
+    public static void outSequence(int[] arr){
+        int len = arr.length;
         Random random  = new Random();
         for(int i = 0;i<len;i++){
             int p = random.nextInt(len);
-            int tmp = nums[i];
-            nums[i] = nums[p];
-            nums[p] = tmp;
+            int tmp = arr[i];
+            arr[i] = arr[p];
+            arr[p] = tmp;
         }
     }
 
+    public static void reverse(int[] arr){
+        int len = arr.length;
+        for(int i =0;i<arr.length/2;i++){
+            swap(arr,i,len-i-1);
+        }
+    }
+
+    private static void swap(int[] arr, int x, int y) {
+        arr[x] ^= arr[y];
+        arr[y] ^= arr[x];
+        arr[x] ^= arr[y];
+    }
 }

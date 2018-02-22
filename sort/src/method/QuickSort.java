@@ -1,8 +1,15 @@
 package method;
 
 public class QuickSort {
-    public static void quickSort(int[] nums){
-        sort2(nums,0,nums.length-1);
+    private static int count=0;
+
+    public static int[] quickSort(int[] arr){
+        int len = arr.length;
+        int[] newArr = new int[len];
+        System.arraycopy(arr,0,newArr,0,len);
+        sort(newArr,0,len-1);
+        System.out.println("QuickSort总共用了"+count+"次。");
+        return newArr;
     }
 
     /**
@@ -19,6 +26,7 @@ public class QuickSort {
 
             while(i<j){
                 while(i<j){
+                    count++;                                                                                            //计数
                     if(k>nums[j]){
                         nums[i++] = nums[j];
                         break;
@@ -27,6 +35,7 @@ public class QuickSort {
                     }
                 }
                 while(i<j){
+                    count++;                                                                                            //计数
                     if(k<nums[i]){
                         nums[j--]=nums[i];
                         break;
