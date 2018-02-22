@@ -2,7 +2,7 @@ package method;
 
 public class QuickSort {
     public static void quickSort(int[] nums){
-        sort(nums,0,nums.length-1);
+        sort2(nums,0,nums.length-1);
     }
 
     /**
@@ -49,31 +49,20 @@ public class QuickSort {
      * @param low 排序的起始位置
      * @param high 排序的终止位置
      */
-    public static void sort2(int[] arr,int low,int high){
+    private static void sort2(int[] arr,int low,int high){
         int l = low;
         int h = high;
-        int povit = arr[low];
+        int key = arr[low];
 
         while(l<h){
-            while(l<h&&arr[h]>=povit) h--;
-            if(l<h){
-                int temp = arr[h];
-                arr[h] = arr[l];
-                arr[l] = temp;
-                l++;
-            }
+            while(l<h&&arr[h]>=key) h--;
+            if(l<h) arr[l++] = arr[h];
 
-            while(l<h&&arr[l]<=povit) l++;
-            if(l<h){
-                int temp = arr[h];
-                arr[h] = arr[l];
-                arr[l] = temp;
-                l++;
-            }
-
-            if(l>low) sort(arr,low,l-1);
-            if(h<high) sort(arr,h+1,high);
+            while(l<h&&arr[l]<=key) l++;
+            if(l<h) arr[h--] = arr[l];
         }
-
+        arr[l] = key;
+        if(l>low) sort2(arr,low,l-1);
+        if(h<high) sort2(arr,h+1,high);
     }
 }
