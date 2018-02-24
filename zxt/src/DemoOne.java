@@ -12,4 +12,7 @@ public class DemoOne {
     public static void test(){
         System.out.println("'test'");
     }
+    public void testForObj(){
+        System.out.println("test for obj the num1 is:"+num1);
+    }
 }
