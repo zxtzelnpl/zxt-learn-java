@@ -1,12 +1,21 @@
 import java.util.Arrays;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 
 public class Main {
-    public static void main(String[] arts){
-        System.out.println("My Main");
-        DemoThree d1 = new DemoThree("Thread-1");
-        d1.start();
+    public static void main(String[] args) throws InterruptedException{
+        ExecutorService pool = Executors.newFixedThreadPool(2);
+        Future<Integer> future = pool.submit(new CallableDemo(10));
+        Future<Integer> future2 = pool.submit(new CallableDemo(100));
 
-        DemoThree d2 = new DemoThree("Thread-2");
-        d2.start();
+        try{
+            System.out.println(future.get());
+            System.out.println(future2.get());
+        }
+        catch(ExecutionException e){
+            e.printStackTrace();
+        }
     }
 }
