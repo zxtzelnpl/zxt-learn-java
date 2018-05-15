@@ -65,11 +65,4 @@ public class MakeHeap{
 
         return height;
     }
-
-
-    public static void printHeap(int[] arr){
-        int length = arr.length;
-        int maxIndex = length - 1;
-
-    }
 }

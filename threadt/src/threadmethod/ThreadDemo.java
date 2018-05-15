@@ -1,8 +1,10 @@
-public class ThreadTest extends Thread{
-    private Thread t;
-    private String threadName;
+package threadmethod;
 
-    ThreadTest(String name){
+public class ThreadDemo extends Thread{
+    Thread t;
+    String threadName;
+
+    public ThreadDemo(String name){
         threadName = name;
         System.out.println("Creating "+threadName);
     }
@@ -12,7 +14,7 @@ public class ThreadTest extends Thread{
         try{
             for(int i = 4;i>0;i--){
                 System.out.println("Thread: "+threadName + ", "+i);
-                Thread.sleep(60);
+                Thread.sleep(1000);
             }
         }
         catch(InterruptedException e){

@@ -1,8 +1,10 @@
-public class RunableOne implements Runnable {
+package threadmethod;
+
+public class RunableDemo implements Runnable {
     private Thread t;
     private String threadName;
 
-    RunableOne(String name){
+    RunableDemo(String name){
         threadName = name;
         System.out.println("Creating"+threadName);
     }

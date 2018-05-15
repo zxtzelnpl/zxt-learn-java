@@ -25,9 +25,7 @@ public class MakeArray {
         Random random  = new Random();
         for(int i = 0;i<len;i++){
             int p = random.nextInt(len);
-            int tmp = arr[i];
-            arr[i] = arr[p];
-            arr[p] = tmp;
+            swap(arr,i,p);
         }
     }
 

@@ -1,11 +1,13 @@
+package threadmethod;
+
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.FutureTask;
 
-public class CallableThreadTest implements Callable<Integer> {
+public class CallableDemo implements Callable<Integer> {
     public static void main(String[] args)
     {
-        CallableThreadTest ctt = new CallableThreadTest();
+        CallableDemo ctt = new CallableDemo();
         FutureTask<Integer> ft = new FutureTask<>(ctt);
         for(int i = 0;i<100;i++){
             System.out.println(Thread.currentThread().getName()+" 的循环变量i的值"+i);
