@@ -1,0 +1,4 @@
+@ItcastAnnotation
+public class AnnotationTest {
+
+}
