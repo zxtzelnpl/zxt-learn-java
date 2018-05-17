@@ -11,6 +11,9 @@ public class JDBCDemo {
 
         try{
             personDao.addPerson(p);
+            personDao.addPerson(p);
+            personDao.addPerson(p);
+            personDao.addPerson(p);
         }catch(SQLException e){
             e.printStackTrace();
         }
